@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <ItemListContainer />
+      <ItemListContainer welcome="Bienvenidos a Ortopedia FixSalud"/>
     </div>
   )
 }
