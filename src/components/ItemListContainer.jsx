@@ -1,9 +1,10 @@
 import React from 'react'
+import ItemList from './ItemList'
 
-const ItemListContainer = ({welcome}) => {
+const ItemListContainer = () => {
   return (
     <>
-    <h2 className="welcome">{welcome}</h2>
+    <ItemList />
     </>
   )
 }

@@ -26,15 +26,13 @@ const Navbar = () => {
           <MenuList className="productMenu">
             <MenuItem className="productMenuItem">Sillas de Ruedas</MenuItem>
             <MenuItem className="productMenuItem">Andadores</MenuItem>
-            <MenuItem className="productMenuItem">Bastones</MenuItem>
             <MenuItem className="productMenuItem">
               Muñequeras/Rodilleras
             </MenuItem>
             <MenuItem className="productMenuItem">Collares</MenuItem>
             <MenuItem className="productMenuItem">
-              Suplementos Vitamínicos
+              Suplementos Deportivos
             </MenuItem>
-            <MenuItem className="productMenuItem">Prótesis</MenuItem>
           </MenuList>
         </Menu>
         <Box>
