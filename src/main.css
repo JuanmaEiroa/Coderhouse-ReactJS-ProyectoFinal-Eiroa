@@ -1,0 +1,147 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgb(98, 181, 230),
+    rgb(163, 178, 187),
+    rgb(98, 181, 230)
+  ) !important;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/*FIN CSS PRINCIPAL*/
+/*---------------------*/
+/*INICIO CSS NAVBAR*/
+
+.navbar {
+  background-color: rgb(39, 116, 161);
+  color: azure;
+  border-radius: 10px;
+  font-size: 150%;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.brandName {
+  font-size: 150%;
+  font-family: "Righteous", cursive;
+}
+
+.navbar span:hover {
+  font-weight: 600;
+  font-style: italic;
+}
+
+.productMenu, .productMenuItem {
+  background-color: rgb(39, 116, 161) !important;
+}
+
+.productMenuItem:hover {
+  font-weight: 600;
+  background-color: rgb(3, 47, 65) !important;
+}
+
+.chevron {
+  font-size: 120%;
+}
+
+.menuButton:hover {
+  font-weight: 600;
+  font-style: italic;
+}
+
+.itemCounter {
+  background-color: gold;
+  padding: 0 7px;
+  text-align: center;
+  border-radius: 13px;
+  font-weight: 600;
+  line-height: 0;
+}
+
+.itemCart {
+  display: inline;
+  font-size: 190%;
+  color: gold;
+}
+
+.cart {
+  border: dashed 2px gold;
+  color: black;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+/*FIN CSS NAVBAR*/
+/*--------------------*/
+/*INICIO CSS HOME*/
+
+.background {
+  background-image: url(./assets/backgroundimage.jpg);
+  background-size: contain;
+  margin: 2% 1%;
+  padding: 25% 0;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+}
+
+.welcome {
+  font-family: "Righteous", cursive;
+  font-size: 600%;
+  text-align: center;
+  color: #FFF;
+}
+
+/*FIN CSS HOME*/
+/*--------------------*/
+/*INICIO CSS PRODUCTS*/
+
+.productsTitle {
+  margin: 2% 0;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.productListContainer {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.itemImg {
+  max-width: 200px;
+  max-height: 200px;
+  margin: 0 auto;
+}
+
+.itemName {
+  font-family: "Righteous", cursive;
+  font-size: 1.2em;
+}

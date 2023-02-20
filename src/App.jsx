@@ -1,7 +1,9 @@
-import ItemListContainer from "./components/ItemListContainer";
-import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Welcome from "./components/Welcome";
+import Navbar from "./components/Navbar";
+import Cart from "./components/Cart";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 const App = () => {
   return (
@@ -9,8 +11,11 @@ const App = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Welcome welcome="Bienvenidos a Ortopedia FixSalud"/> }></Route>
-          <Route exact path="/catalog" element={<ItemListContainer /> }></Route>
+          <Route exact path="/" element={<Welcome welcome="Bienvenidos a Ortopedia FixSalud"/> } />
+          <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/catalog" element={<ItemListContainer />} />
+          <Route exact path="/category/:category" element={<ItemListContainer />} />
+          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
     </>

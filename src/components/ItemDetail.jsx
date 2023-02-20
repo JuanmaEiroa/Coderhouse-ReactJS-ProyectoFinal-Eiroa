@@ -1,33 +1,34 @@
 import React from "react";
-import { useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemCount from "./ItemCount";
 
-const ItemDetail = () => {
-  const [itemCounter, setItemCounter] = useState(0);
+const ItemDetail = ({ products }) => {
+  const { id } = useParams();
 
-  const plusItem = () => {
-    setItemCounter(itemCounter + 1);
-  };
-  const minusItem = () => {
-    itemCounter <= 0 ? setItemCounter(itemCounter - 1) : itemCounter;
-  };
+  const productFilter = products.filter((product) => product.id == id);
 
   return (
     <>
-      <Card>
-        <CardHeader>Silla de Ruedas</CardHeader>
-        <CardBody>
-          <img alt="Silla de Ruedas"></img>
-          <p>Precio: $2550</p>
-        </CardBody>
-        <Divider />
-        <CardFooter>
-          <button onClick={minusItem}>-</button>
-          <div className="itemCounter">{itemCounter}</div>
-          <button onClick={plusItem}>+</button>
-          <br />
-          <button>Añadir a carrito</button>
-        </CardFooter>
-      </Card>
+      {productFilter.map((product) => (
+        <div key={product.id}>
+          <Card>
+            <CardHeader>{product.name}</CardHeader>
+            <CardBody>
+              <img src={product.image} alt="Item image"></img>
+              <br />
+              <p>{product.description}</p>
+              <p><b>Precio:</b> ${product.price}</p>
+              <p><b>Stock:</b> {product.stock}</p>
+            </CardBody>
+            <Divider />
+            <CardFooter>
+              <ItemCount />
+              <br />
+              <button>Añadir a carrito</button>
+            </CardFooter>
+          </Card>
+        </div>
+      ))}
     </>
   );
 };

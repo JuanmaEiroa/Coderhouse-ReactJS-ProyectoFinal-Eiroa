@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -7,20 +8,29 @@ import {
   Divider,
 } from "@chakra-ui/react";
 
-const Item = () => {
+const Item = ({ id, name, category, image, stock }) => {
   return (
     <>
+    <div key={id}>
       <Card>
-        <CardHeader>Silla de Ruedas</CardHeader>
+        <CardHeader>
+          <span className="itemName">{name}</span>
+        </CardHeader>
+        <Divider />
         <CardBody>
-          <img alt="Silla de Ruedas"></img>
-          <p>Precio: $2550</p>
+          <img className="itemImg" src={image} alt="Item image"></img>
+          <br />
+          <p><b>Categoría:</b> {category}</p>
+          <p><b>Stock:</b> {stock}</p>
         </CardBody>
         <Divider />
         <CardFooter>
-          <button>Ver detalles</button>
+          <Link to={`/item/${id}`}>
+            <button>Ver detalles</button>
+          </Link>
         </CardFooter>
       </Card>
+      </div>
     </>
   );
 };

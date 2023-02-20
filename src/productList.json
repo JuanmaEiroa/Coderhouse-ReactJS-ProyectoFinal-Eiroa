@@ -1,12 +1,12 @@
 [
-    {"name": "Silla de Ruedas Manual", "category":"wheelchair", "id":"wch1", "price": 5500, "image":""},
-    {"name": "Silla de Ruedas con Motor", "category":"wheelchair", "id":"wch2", "price": 10000, "image":""},
-    {"name": "Andador de 4 patas", "category":"walker", "id":"walk1", "price": 3000, "image":""},
-    {"name": "Andador de 2 patas y 2 ruedas", "category":"walker", "id":"walk2", "price": 6200, "image":""},
-    {"name": "Collar Cervical Tipo Filadelfia Pequeño", "category":"collar1", "id":"col1", "price": 2500, "image":""},
-    {"name": "Collar Cervical Tipo Filadelfia Mediano", "category":"collar2", "id":"col2", "price": 2800, "image":""},
-    {"name": "Collar Cervical Tipo Filadelfia Grande", "category":"collar3", "id":"col3", "price": 3150, "image":""},
-    {"name": "Proteína en Polvo x 3 kg", "category":"supplement", "id":"sup1", "price": 6500, "image":""},
-    {"name": "Creatina Micronizada x 300 gr", "category":"supplement", "id":"sup2", "price": 5450, "image":""},
-    {"name": "Quemador de Grasa x 60 cápsulas", "category":"supplement", "id":"sup3", "price": 3260, "image":""}
+    {"name": "Silla de Ruedas Manual", "category":"Silla de Ruedas", "id":"wch1", "price": 5500, "stock": 6, "image":"./src/assets/wheelchair1.jpg", "description": "Silla de ruedas clásica, de tamaño mediano, con apoyabrazos, apoyapies y asiento reforzado."},
+    {"name": "Silla de Ruedas con Motor", "category":"Silla de Ruedas", "id":"wch2", "price": 10000, "stock": 2, "image":"./src/assets/wheelchair2.jpg", "description": "Silla de ruedas con motor integrado de 2 velocidades, tamaño mediano, con apoyabrazos, apoyapies y asiento reforzado."},
+    {"name": "Andador de 4 patas", "category":"Andador", "id":"walk1", "price": 3000, "stock": 10, "image":"./src/assets/walker1.jpg", "description": "Andador con 4 patas, de aluminio reforzado."},
+    {"name": "Andador de 2 ruedas", "category":"Andador", "id":"walk2", "price": 6200, "stock": 4, "image":"./src/assets/walker2.jpg", "description": "Andador con 2 ruedas delanteras y 2 patas traseras, de aluminio reforzado."},
+    {"name": "Collar Cervical Tipo Filadelfia Pequeño", "category":"Collar", "id":"col1", "price": 2500, "stock": 6, "image":"./src/assets/filadelfiasmall.jpg", "description": "Collar de Filadelfia en 2 piezas, con abrojo de velcro. Talle: S."},
+    {"name": "Collar Cervical Tipo Filadelfia Mediano", "category":"Collar", "id":"col2", "price": 2800, "stock": 6, "image":"./src/assets/filadelfiamedium.jpg", "description": "Collar de Filadelfia en 2 piezas, con abrojo de velcro. Talle: M."},
+    {"name": "Collar Cervical Tipo Filadelfia Grande", "category":"Collar", "id":"col3", "price": 3150, "stock": 6, "image":"./src/assets/filadelfialarge.jpg", "description": "Collar de Filadelfia en 2 piezas, con abrojo de velcro. Talle: L."},
+    {"name": "Proteína en Polvo x 3 kg", "category":"Suplementos", "id":"sup1", "price": 6500, "stock": 15, "image":"./src/assets/protein.png", "description": "Proteína en polvo sabor vainilla x 3 kg. Aproximadamente 30 porciones."},
+    {"name": "Creatina Micronizada x 300 gr", "category":"Suplementos", "id":"sup2", "price": 5450, "stock": 8, "image":"./src/assets/creatine.jpg", "description": "Creatina en polvo micronizada x 300 gr. Aproximadamente 60 porciones"},
+    {"name": "Quemador de Grasa x 120 cápsulas", "category":"Suplementos", "id":"sup3", "price": 3260, "stock": 4, "image":"./src/assets/thermofuel.jpg", "description": "Quemador de grasa x 120 cápsulas. Aproximadamente 60 porciones"}
 ]
