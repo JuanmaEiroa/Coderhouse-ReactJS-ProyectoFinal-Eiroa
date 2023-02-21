@@ -20,7 +20,7 @@ const ItemListContainer = () => {
       }
     }
     getProducts();
-  }, []);
+  }, [category]);
 
   const getProductByCategory = Data.filter(
     (product) => product.category === category

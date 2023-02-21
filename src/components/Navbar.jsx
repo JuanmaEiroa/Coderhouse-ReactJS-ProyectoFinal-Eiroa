@@ -6,8 +6,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
-  Button,
+  MenuDivider
 } from "@chakra-ui/react";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
@@ -33,16 +32,16 @@ const Navbar = () => {
               <MenuItem className="productMenuItem">Todos los productos</MenuItem>
             </Link>
             <MenuDivider />
-            <Link to={`/category/${"wheelchair"}`}>
+            <Link to={`/category/${"Silla de Ruedas"}`}>
               <MenuItem className="productMenuItem">Sillas de Ruedas</MenuItem>
             </Link>
-            <Link to={`/category/${"walker"}`}>
+            <Link to={`/category/${"Andador"}`}>
             <MenuItem className="productMenuItem">Andadores</MenuItem>
             </Link>
-            <Link to={`/category/${"collar"}`}>
+            <Link to={`/category/${"Collar"}`}>
             <MenuItem className="productMenuItem">Collares</MenuItem>
             </Link>
-            <Link to={`/category/${"supplement"}`}>
+            <Link to={`/category/${"Suplementos"}`}>
             <MenuItem className="productMenuItem">
               Suplementos Deportivos
             </MenuItem>

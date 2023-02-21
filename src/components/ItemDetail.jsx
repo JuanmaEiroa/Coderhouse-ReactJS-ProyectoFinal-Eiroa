@@ -1,15 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import { Card, CardHeader, CardBody, Divider, CardFooter } from "@chakra-ui/react";
 
 const ItemDetail = ({ products }) => {
   const { id } = useParams();
 
-  const productFilter = products.filter((product) => product.id == id);
+  const productFind = products.find((product) => product.id == id);
 
   return (
     <>
-      {productFilter.map((product) => (
+      {products.map((product) => (
         <div key={product.id}>
           <Card>
             <CardHeader>{product.name}</CardHeader>

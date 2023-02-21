@@ -1,9 +1,12 @@
+import { Container, Heading } from "@chakra-ui/react";
 import React from "react";
 
 const Cart = () => {
   return (
     <>
-      <div>Cart</div>
+      <Container centerContent className="cartContainer">
+        <Heading>Carrito</Heading>
+      </Container>
     </>
   );
 };

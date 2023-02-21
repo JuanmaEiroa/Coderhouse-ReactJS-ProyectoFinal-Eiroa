@@ -105,9 +105,9 @@ h1 {
 
 .background {
   background-image: url(./assets/backgroundimage.jpg);
-  background-size: contain;
+  background-size: cover;
   margin: 2% 1%;
-  padding: 25% 0;
+  padding: 10% 0;
   background-repeat: no-repeat;
   opacity: 0.85;
 }
@@ -116,7 +116,8 @@ h1 {
   font-family: "Righteous", cursive;
   font-size: 600%;
   text-align: center;
-  color: #FFF;
+  color: rgb(98, 181, 230);
+  box-shadow: 300px;
 }
 
 /*FIN CSS HOME*/
@@ -144,4 +145,13 @@ h1 {
 .itemName {
   font-family: "Righteous", cursive;
   font-size: 1.2em;
+}
+
+/*FIN CSS PRODUCTS*/
+/*--------------------*/
+/*INICIO CSS CART*/
+
+.cartContainer {
+  background-color: rgba(40, 106, 133, 0.322);
+  margin: 2% 0;
 }
