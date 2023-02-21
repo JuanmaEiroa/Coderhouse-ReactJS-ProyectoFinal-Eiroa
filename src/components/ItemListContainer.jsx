@@ -12,19 +12,19 @@ const ItemListContainer = () => {
   useEffect(() => {
     async function getProducts() {
       try {
-        const response = await fetch(Data);
+        const response = await fetch("/src/productList.json");
         const productsList = await response.json();
-        setProducts(productsList);
+        category
+          ? setProducts(
+              productsList.filter((product) => product.category === category)
+            )
+          : setProducts(productsList);
       } catch (error) {
         console.log(error);
       }
     }
     getProducts();
   }, [category]);
-
-  const getProductByCategory = Data.filter(
-    (product) => product.category === category
-  );
 
   return (
     <>
@@ -33,11 +33,7 @@ const ItemListContainer = () => {
       </Container>
       <div className="productListContainer">
         <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-          {category ? (
-            <ItemList products={getProductByCategory} />
-          ) : (
-            <ItemList products={Data} />
-          )}
+          <ItemList products={products} />
         </Grid>
       </div>
     </>

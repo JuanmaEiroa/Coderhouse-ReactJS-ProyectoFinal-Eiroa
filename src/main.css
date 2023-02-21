@@ -56,7 +56,8 @@ h1 {
   font-style: italic;
 }
 
-.productMenu, .productMenuItem {
+.productMenu,
+.productMenuItem {
   background-color: rgb(39, 116, 161) !important;
 }
 
@@ -74,7 +75,7 @@ h1 {
   font-style: italic;
 }
 
-.itemCounter {
+.cartCounter {
   background-color: gold;
   padding: 0 7px;
   text-align: center;
@@ -148,6 +149,39 @@ h1 {
 }
 
 /*FIN CSS PRODUCTS*/
+/*--------------------*/
+/*INICIO CSS DETAILS*/
+
+.itemCounter {
+  color: #000;
+  border: #ecc94b dotted 3px;
+  padding-top: 3px;
+  font-size: 1.2em;
+}
+
+.itemCountSymbol {
+  font-size: 120%;
+  font-weight: 700;
+}
+
+.itemDetailName {
+  font-family: "Righteous", cursive;
+  font-size: 1.4em;
+}
+
+.itemDetailCard {
+  width: 30%;
+  margin: 1% auto;
+  text-align: center;
+}
+
+.itemDetailImg {
+  margin: auto;
+  height: 50%;
+  width: 50%;
+}
+
+/*FIN CSS DETAILS*/
 /*--------------------*/
 /*INICIO CSS CART*/
 
