@@ -187,5 +187,23 @@ h1 {
 
 .cartContainer {
   background-color: rgba(40, 106, 133, 0.322);
-  margin: 2% 0;
+  margin-top: 2%;
+  padding-bottom: 2%;
+}
+
+.cartTitle {
+  margin-bottom: 2%;
+}
+
+.cartItemList {
+  background-color: whitesmoke;
+  border-radius:5px;
+  margin-bottom: 1%;
+  max-width: 90% !important;
+}
+
+.itemExpanded {
+  margin-bottom: 1%;
+  text-align: center;
+  padding-bottom: 0 !important;
 }
