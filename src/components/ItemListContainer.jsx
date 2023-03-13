@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import Data from "../productList.json";
 import { Container, Grid, Heading } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
