@@ -14,7 +14,7 @@ import { CartContext } from "../context/ShoppingCartContext";
 import React, { useContext } from "react";
 
 const Cart = () => {
-  const [cart, setCart] = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   console.log(cart);
 
   return (
@@ -23,29 +23,25 @@ const Cart = () => {
         <Heading className="cartTitle">Carrito</Heading>
         <Container className="cartItemList">
           <Accordion allowMultiple>
-            {cart.map((item) => {
-              return (
-              <AccordionItem>
-                <h2>
-                  <AccordionButton
-                    _expanded={{ bg: "lightblue", color: "white" }}
-                  >
-                    <Box as="span" flex="1" textAlign="left">
-                      {item.name}
-                    </Box>
-                    <AccordionIcon />
-                  </AccordionButton>
-                </h2>
-                <AccordionPanel className="itemExpanded">
-                  {item.image} - {item.name} - {item.price}
-                  <br />
-                  <Center>
-                    <Button colorScheme={"red"}>Eliminar</Button>
-                  </Center>
-                </AccordionPanel>
-              </AccordionItem>
-              );
-            })}
+            <AccordionItem>
+              <h2>
+                <AccordionButton
+                  _expanded={{ bg: "lightblue", color: "white" }}
+                >
+                  <Box as="span" flex="1" textAlign="left">
+                    item1
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel className="itemExpanded">
+                item1img - item1name - item1price
+                <br />
+                <Center>
+                  <Button colorScheme={"red"}>Eliminar</Button>
+                </Center>
+              </AccordionPanel>
+            </AccordionItem>
           </Accordion>
         </Container>
         <Button colorScheme={"green"}>Finalizar Compra</Button>
