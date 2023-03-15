@@ -17,22 +17,43 @@ const ShoppingCartContextProvider = ({ children }) => {
 
   const resetCounter = () => {
     setCounter(0);
-  }
+  };
 
-    //LOGICA DE CART
+  //LOGICA DE CART
   const [cart, setCart] = useState([]);
-  
-  const handleAddToCart = (quantity) => {
-    console.log("Item añadido a carrito");
-    return (1+quantity);
 
+  const resetCart = () => {
+    setCart([]);
+    console.log("Carrito vacío");
+    console.log(cart);
+  };
 
-  }
+  const handleRemoveItem = () => {
+    setCart(cart.filter((item) => item.id === id));
+    console.log("Producto eliminado");
+    console.log(cart);
+  };
+
+  const handleAddToCart = (item) => {
+    setCart((cart) => [...cart, item]);
+    console.log("Producto agregado al carrito");
+    console.log(cart);
+  };
 
   return (
     <>
       <CartContext.Provider
-        value={{ cart, setCart, counter, upCounter, downCounter, resetCounter, handleAddToCart }}
+        value={{
+          cart,
+          setCart,
+          counter,
+          upCounter,
+          downCounter,
+          resetCounter,
+          resetCart,
+          handleAddToCart,
+          handleRemoveItem,
+        }}
       >
         {children}
       </CartContext.Provider>

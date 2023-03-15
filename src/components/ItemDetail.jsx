@@ -31,7 +31,7 @@ const ItemDetail = ({ product }) => {
         </CardBody>
         <Divider />
         <CardFooter>
-          <ItemCount productStock={product.stock}/>
+          <ItemCount productStock={product.stock} product={product}/>
         </CardFooter>
       </Card>
     </>

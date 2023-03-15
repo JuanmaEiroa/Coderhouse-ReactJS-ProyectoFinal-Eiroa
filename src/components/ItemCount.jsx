@@ -3,7 +3,7 @@ import { Grid, Center, Button, GridItem } from "@chakra-ui/react";
 import { useContext } from "react";
 import { CartContext } from "../context/ShoppingCartContext";
 
-const ItemCount = ({ productStock }) => {
+const ItemCount = ({ productStock, product }) => {
   const { counter, upCounter, downCounter, handleAddToCart } = useContext(CartContext);
 
   const plusItem = () => {

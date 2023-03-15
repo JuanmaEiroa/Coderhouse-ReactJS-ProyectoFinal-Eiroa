@@ -14,7 +14,7 @@ import { CartContext } from "../context/ShoppingCartContext";
 import React, { useContext } from "react";
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, resetCart, handleRemoveItem } = useContext(CartContext);
   console.log(cart);
 
   return (
@@ -38,12 +38,13 @@ const Cart = () => {
                 item1img - item1name - item1price
                 <br />
                 <Center>
-                  <Button colorScheme={"red"}>Eliminar</Button>
+                  <Button colorScheme={"red"} onClick={handleRemoveItem}>Eliminar</Button>
                 </Center>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
         </Container>
+        <Button colorScheme={"red"} onClick={resetCart}>Vaciar Carrito</Button>
         <Button colorScheme={"green"}>Finalizar Compra</Button>
       </Container>
     </>
