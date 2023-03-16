@@ -1,17 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Center, Button, GridItem } from "@chakra-ui/react";
-import { useContext } from "react";
-import { CartContext } from "../context/ShoppingCartContext";
 
 const ItemCount = ({ productStock, product }) => {
-  const { counter, upCounter, downCounter, handleAddToCart } = useContext(CartContext);
+  const [counter, setCounter] = useState(0);
 
   const plusItem = () => {
-    counter < productStock ? upCounter() : counter;
+    counter < productStock ? setCounter(counter + 1) : counter;
   };
 
   const minusItem = () => {
-    counter > 0 ? downCounter() : counter;
+    counter > 0 ? setCounter(counter - 1) : counter;
   };
 
   return (
@@ -43,12 +41,7 @@ const ItemCount = ({ productStock, product }) => {
           </Center>
         </GridItem>
         <GridItem colSpan={3}>
-          <Button
-            w="100%"
-            colorScheme="green"
-            className="addToCartBtn"
-            onClick={handleAddToCart}
-          >
+          <Button w="100%" colorScheme="green" className="addToCartBtn">
             Añadir al carrito
           </Button>
         </GridItem>

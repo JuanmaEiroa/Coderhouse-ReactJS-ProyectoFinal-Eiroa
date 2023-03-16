@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import ItemCount from "./ItemCount";
 import {
   Card,
@@ -7,8 +7,11 @@ import {
   Divider,
   CardFooter,
 } from "@chakra-ui/react";
+import { CartContext } from "../context/ShoppingCartContext";
 
 const ItemDetail = ({ product }) => {
+  const { handleAddToCart } = useContext(CartContext);
+
   return (
     <>
       <Card className="itemDetailCard">
@@ -31,7 +34,7 @@ const ItemDetail = ({ product }) => {
         </CardBody>
         <Divider />
         <CardFooter>
-          <ItemCount productStock={product.stock} product={product}/>
+          <ItemCount productStock={product.stock} onAdd={handleAddToCart}/>
         </CardFooter>
       </Card>
     </>

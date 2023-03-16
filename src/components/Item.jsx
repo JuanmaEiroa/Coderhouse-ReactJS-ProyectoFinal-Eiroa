@@ -8,11 +8,10 @@ import {
   CardFooter,
   Divider,
 } from "@chakra-ui/react";
-import { CartContext } from "../context/ShoppingCartContext";
-import { useContext } from "react";
+
 
 const Item = ({ id, name, category, image, stock }) => {
-  const {resetCounter} = useContext(CartContext);
+
 
   return (
     <>
@@ -35,7 +34,7 @@ const Item = ({ id, name, category, image, stock }) => {
           <Divider />
           <CardFooter>
             <Link to={`/item/${id}`}>
-                <Button w="100%" colorScheme="yellow" onClick={resetCounter}>
+                <Button w="100%" colorScheme="yellow">
                   Ver detalles
                 </Button>
             </Link>

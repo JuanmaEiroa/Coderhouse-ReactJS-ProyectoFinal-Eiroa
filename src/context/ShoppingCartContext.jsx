@@ -4,23 +4,11 @@ export const CartContext = createContext(null);
 import React from "react";
 
 const ShoppingCartContextProvider = ({ children }) => {
-  //LOGICA DE COUNTER
-  const [counter, setCounter] = useState(0);
-
-  const upCounter = () => {
-    setCounter(counter + 1);
-  };
-
-  const downCounter = () => {
-    setCounter(counter - 1);
-  };
-
-  const resetCounter = () => {
-    setCounter(0);
-  };
-
-  //LOGICA DE CART
   const [cart, setCart] = useState([]);
+
+  const isInCart = (id) => {
+    cart.find((item) => item.id === id) ? true : false;
+  };
 
   const resetCart = () => {
     setCart([]);
@@ -35,7 +23,17 @@ const ShoppingCartContextProvider = ({ children }) => {
   };
 
   const handleAddToCart = (item) => {
-    setCart((cart) => [...cart, item]);
+    if (isInCart(item.id)) {
+      setCart(
+        cart.map((product) => {
+          return product.id === item.id
+            ? { ...product, quantity: product.quantity + quantity }
+            : product;
+        })
+      );
+    } else {
+      setCart([...cart, { ...item, quantity }]);
+    }
     console.log("Producto agregado al carrito");
     console.log(cart);
   };
@@ -46,10 +44,7 @@ const ShoppingCartContextProvider = ({ children }) => {
         value={{
           cart,
           setCart,
-          counter,
-          upCounter,
-          downCounter,
-          resetCounter,
+          isInCart,
           resetCart,
           handleAddToCart,
           handleRemoveItem,
