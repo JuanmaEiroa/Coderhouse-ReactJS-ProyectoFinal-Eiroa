@@ -7,7 +7,7 @@ const ShoppingCartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const isInCart = (id) => {
-    cart.find((item) => item.id === id) ? true : false;
+    return cart.some((prod) => prod.id === id);
   };
 
   const resetCart = () => {
@@ -16,25 +16,19 @@ const ShoppingCartContextProvider = ({ children }) => {
     console.log(cart);
   };
 
-  const handleRemoveItem = () => {
-    setCart(cart.filter((item) => item.id === id));
+  const handleRemoveItem = (id) => {
+    setCart(cart.filter((prod) => prod.id !== id));
     console.log("Producto eliminado");
     console.log(cart);
   };
 
-  const handleAddToCart = (item) => {
-    if (isInCart(item.id)) {
-      setCart(
-        cart.map((product) => {
-          return product.id === item.id
-            ? { ...product, quantity: product.quantity + quantity }
-            : product;
-        })
-      );
-    } else {
-      setCart([...cart, { ...item, quantity }]);
-    }
-    console.log("Producto agregado al carrito");
+  const handleAddToCart = (quantity, product) => {
+    console.log(`Agregaste ${quantity} de ${product.name}`);
+    const newItem = {
+      item: product,
+      itemcount: quantity,
+    };
+    setCart([...cart, newItem]);
     console.log(cart);
   };
 

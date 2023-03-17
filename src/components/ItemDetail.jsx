@@ -12,6 +12,10 @@ import { CartContext } from "../context/ShoppingCartContext";
 const ItemDetail = ({ product }) => {
   const { handleAddToCart } = useContext(CartContext);
 
+  const onAdd = (quantity) => {
+    handleAddToCart(quantity, product);
+  };
+
   return (
     <>
       <Card className="itemDetailCard">
@@ -34,7 +38,7 @@ const ItemDetail = ({ product }) => {
         </CardBody>
         <Divider />
         <CardFooter>
-          <ItemCount productStock={product.stock} onAdd={handleAddToCart}/>
+          <ItemCount productStock={product.stock} onAdd={onAdd} />
         </CardFooter>
       </Card>
     </>

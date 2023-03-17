@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Grid, Center, Button, GridItem } from "@chakra-ui/react";
 
-const ItemCount = ({ productStock, product }) => {
+const ItemCount = ({ productStock, onAdd}) => {
   const [counter, setCounter] = useState(0);
 
   const plusItem = () => {
@@ -11,6 +11,8 @@ const ItemCount = ({ productStock, product }) => {
   const minusItem = () => {
     counter > 0 ? setCounter(counter - 1) : counter;
   };
+
+  const quantity = counter;
 
   return (
     <>
@@ -41,7 +43,7 @@ const ItemCount = ({ productStock, product }) => {
           </Center>
         </GridItem>
         <GridItem colSpan={3}>
-          <Button w="100%" colorScheme="green" className="addToCartBtn">
+          <Button w="100%" colorScheme="green" className="addToCartBtn" onClick={onAdd}>
             Añadir al carrito
           </Button>
         </GridItem>
