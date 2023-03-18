@@ -208,3 +208,8 @@ h1 {
   text-align: center;
   padding-bottom: 0 !important;
 }
+
+.cartQuantity {
+  background-color: #ecc94b !important;
+  border-radius: 50px;
+}

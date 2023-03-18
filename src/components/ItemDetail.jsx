@@ -13,7 +13,7 @@ const ItemDetail = ({ product }) => {
   const { handleAddToCart } = useContext(CartContext);
 
   const onAdd = (quantity) => {
-    handleAddToCart(quantity, product);
+    handleAddToCart(product,quantity);
   };
 
   return (

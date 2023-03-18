@@ -12,8 +12,6 @@ const ItemCount = ({ productStock, onAdd}) => {
     counter > 0 ? setCounter(counter - 1) : counter;
   };
 
-  const quantity = counter;
-
   return (
     <>
       <Grid
@@ -43,7 +41,7 @@ const ItemCount = ({ productStock, onAdd}) => {
           </Center>
         </GridItem>
         <GridItem colSpan={3}>
-          <Button w="100%" colorScheme="green" className="addToCartBtn" onClick={onAdd}>
+          <Button w="100%" colorScheme="green" className="addToCartBtn" onClick={()=>onAdd(counter)}>
             Añadir al carrito
           </Button>
         </GridItem>

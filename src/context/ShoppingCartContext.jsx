@@ -5,31 +5,48 @@ import React from "react";
 
 const ShoppingCartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
 
   const isInCart = (id) => {
-    return cart.some((prod) => prod.id === id);
+    return cart.some((prod) => prod.item.id === id);
   };
 
   const resetCart = () => {
     setCart([]);
-    console.log("Carrito vacío");
-    console.log(cart);
+    setTotal(0);
+    setTotalItems(0);
   };
 
   const handleRemoveItem = (id) => {
-    setCart(cart.filter((prod) => prod.id !== id));
-    console.log("Producto eliminado");
-    console.log(cart);
+    const removedItem = cart.find((prod) => prod.item.id === id);
+    setTotal(total-(removedItem.item.price*removedItem.quantity));
+    setTotalItems(totalItems-(removedItem.quantity));
+    setCart(cart.filter((prod) => prod.item.id !== id));
   };
 
-  const handleAddToCart = (quantity, product) => {
-    console.log(`Agregaste ${quantity} de ${product.name}`);
-    const newItem = {
-      item: product,
-      itemcount: quantity,
-    };
-    setCart([...cart, newItem]);
-    console.log(cart);
+  const handleAddToCart = (product, quantity) => {
+    if (isInCart(product.id)) {
+      const updatedCart = cart.map((prod) => {
+        if (prod.item.id === product.id) {
+          return { ...prod, quantity: prod.quantity + quantity };
+        } else {
+          return prod;
+        }
+      });
+      setCart(updatedCart);
+      setTotal(total + product.price*quantity);
+      console.log(`Agregaste ${quantity} de ${product.name}`);
+    } else {
+      console.log(`Agregaste ${quantity} de ${product.name}`);
+      const newItem = {
+        item: product,
+        quantity: quantity,
+      };
+      setCart([...cart, newItem]);
+      setTotal(total + newItem.item.price*newItem.quantity);
+    }
+    setTotalItems(totalItems+quantity);
   };
 
   return (
@@ -38,6 +55,9 @@ const ShoppingCartContextProvider = ({ children }) => {
         value={{
           cart,
           setCart,
+          total,
+          setTotal,
+          totalItems,
           isInCart,
           resetCart,
           handleAddToCart,
