@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import ItemList from "./ItemList";
 import { Container, Grid, Heading } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
@@ -7,6 +8,21 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = () => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
+
+  /* USO DE FIREBASE → FUNCIONA CORRECTAMENTE
+  useEffect(() => {
+    const db = getFirestore();
+
+    const itemsCollection = collection(db, "ortopedicproducts");
+
+    getDocs(itemsCollection).then((snapshot) => {
+      const docs = snapshot.docs.map((doc) => doc.data());
+      category
+        ? setProducts(docs.filter((product) => product.category === category))
+        : setProducts(docs);
+    });
+  }, [category]);
+  */
 
   useEffect(() => {
     async function getProducts() {
@@ -24,6 +40,7 @@ const ItemListContainer = () => {
     }
     getProducts();
   }, [category]);
+
 
   return (
     <>

@@ -14,8 +14,12 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 import { MdPermIdentity, MdPhone, MdOutlineHome } from "react-icons/md";
+import { useContext } from "react";
+import { CartContext } from "../context/ShoppingCartContext";
 
 const BuyerForm = () => {
+  const {handleFinishBuy} = useContext(CartContext);
+
   return (
     <>
       <Container className="buyerForm">
@@ -75,7 +79,7 @@ const BuyerForm = () => {
             Los campos con un * son obligatorios
           </FormHelperText>
         </FormControl>
-        <Button colorScheme={"green"}>Enviar Datos</Button>
+        <Button colorScheme={"green"} onClick={handleFinishBuy}>Enviar Datos</Button>
       </Container>
     </>
   );

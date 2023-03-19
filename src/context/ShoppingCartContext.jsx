@@ -59,7 +59,7 @@ const ShoppingCartContextProvider = ({ children }) => {
     }
     setTotalItems(totalItems + quantity);
     Toastify({
-      text: `Agregaste ${quantity} ${product.name} al carrito! 🛒`,
+      text: `Agregaste ${quantity} "${product.name}" al carrito! 🛒`,
       duration: 2000,
       className: "toastAlert",
       offset: {
@@ -71,6 +71,16 @@ const ShoppingCartContextProvider = ({ children }) => {
 
   const handleShowForm = () => {
     setShowForm(true);
+  }
+
+  const handleFinishBuy = () => {
+    Swal.fire({
+      title: "Muchas Gracias!",
+      text: "Su pedido ha sido realizado",
+      icon: "success",
+      confirmButtonText: "Ok",
+      color: "black",
+    });
   }
 
   return (
@@ -86,7 +96,8 @@ const ShoppingCartContextProvider = ({ children }) => {
           handleAddToCart,
           handleRemoveItem,
           showForm,
-          handleShowForm
+          handleShowForm,
+          handleFinishBuy
         }}
       >
         {children}

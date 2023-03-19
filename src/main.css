@@ -52,9 +52,14 @@ h1 {
   font-family: "Righteous", cursive;
 }
 
+.brandName:hover {
+  color: azure !important;
+}
+
 .navbar span:hover {
   font-weight: 600;
   font-style: italic;
+  color: azure !important;
 }
 
 .productMenu,
