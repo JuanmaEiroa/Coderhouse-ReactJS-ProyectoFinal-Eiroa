@@ -11,6 +11,8 @@ Este es el resultado final del proyecto creado para el curso de ReactJS de Coder
 3. JavaScript
 4. ReactJS (mediante Vite)
 5. Firebase
+6. ChakraUI
+7. React-Icons (requiere instalación previa, ver debajo)
 
 ---
 
@@ -36,6 +38,14 @@ Este es el resultado final del proyecto creado para el curso de ReactJS de Coder
 ---
 
 ### *Ejecución de la Aplicación*
+
+Previo a la ejecución de la aplicación, se recomienda la instalación de React-Icons, ya que permitirá una mejor visualización de la aplicación. Para 
+ésto, en la terminal, se debe ejecutar el siguiente comando:
+
+```
+npm install react-icons --save
+```
+
 Para ejecutar la aplicación, debe abrirse una terminal y ubicarse en el directorio del E-commerce (/eiroacommerce). Una vez en el directorio, ejecutar:
 
 ```
@@ -47,5 +57,5 @@ npm run dev
 ---
 
 ### *Créditos*
-Código escrito por Juan Manuel Eiroa.
-Agradecimientos al equipo de **Coderhouse**, incluyendo tutores y profesores del curso de ReactJS, que ayudaron a que esta aplicación web sea posible. 
+Código escrito por **Juan Manuel Eiroa**.
+Agradecimientos al equipo de **Coderhouse**, incluyendo tutores y profesores del curso de ReactJS, que ayudaron a que esta aplicación web sea posible; así como también a quienes generaron las librerías y frameworks utilizados para este proyecto <ins>**(Vite, React-Icons, ChakraUI)**</ins>.
