@@ -77,10 +77,8 @@ h1 {
 }
 
 .cartCounter {
-  background-color: gold;
-  padding: 0 7px;
-  text-align: center;
-  border-radius: 15px;
+  background-color: gold !important;
+  border-radius: 50px !important;
   font-weight: 600;
   line-height: 1;
 }
@@ -108,7 +106,7 @@ h1 {
 .background {
   background-image: url(./assets/backgroundimage.jpg);
   background-size: cover;
-  margin: 2% 1%;
+  margin: 9% 0;
   padding: 10% 0;
   background-repeat: no-repeat;
   opacity: 0.85;
@@ -189,7 +187,7 @@ h1 {
 .cartContainer {
   background-color: rgba(40, 106, 133, 0.322);
   margin-top: 2%;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
   text-align: center;
 }
 
@@ -202,6 +200,7 @@ h1 {
 .cartItemList {
   background-color: whitesmoke;
   border-radius: 5px;
+  padding: 2% 0;
   margin-bottom: 1%;
   max-width: 90% !important;
 }
@@ -239,6 +238,18 @@ h1 {
   margin-bottom: 2%;
 }
 
+.emptyCart {
+  margin-top: 5%;
+  background-color: whitesmoke;
+  padding-bottom: 1%;
+  border-radius: 10px;
+}
+
+.emptyCart a {
+  font-size: 1.3em;
+  text-decoration: underline;
+}
+
 /*FIN CSS CART*/
 /*--------------------*/
 /*INICIO CSS FORM*/
@@ -266,3 +277,5 @@ h1 {
   text-align: right;
   font-size: 0.9em !important;
 }
+
+/*FIN CSS FORM*/

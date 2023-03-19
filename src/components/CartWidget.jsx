@@ -1,3 +1,4 @@
+import { Badge } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { CartContext } from "../context/ShoppingCartContext";
 
@@ -8,7 +9,7 @@ const CartWidget = () => {
   return (
     <>
         <button className="cart">
-        <span className="cartCounter">{totalItems}</span>
+        <Badge fontSize="1em" className="cartCounter">{totalItems}</Badge>
         <span className="itemCart material-symbols-outlined">shopping_basket</span>
         </button>
     </>

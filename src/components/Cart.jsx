@@ -11,21 +11,29 @@ import {
   Center,
   Badge,
   Divider,
+  Flex,
+  Spacer,
 } from "@chakra-ui/react";
 import { CartContext } from "../context/ShoppingCartContext";
 import React, { useContext } from "react";
 import BuyerForm from "./BuyerForm";
-
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, resetCart, handleRemoveItem, total, showForm, handleShowForm } = useContext(CartContext);
+  const { cart, resetCart, handleRemoveItem, total, showForm, handleShowForm } =
+    useContext(CartContext);
 
   return (
     <>
       {cart.length === 0 ? (
-        <Center>
-          <Heading className="cartTitle">El carrito está vacío</Heading>
-        </Center>
+        <Container className="emptyCart">
+          <Center>
+            <Heading className="cartTitle">El carrito está vacío</Heading>
+          </Center>
+          <Center>
+            <Link to={"/catalog"}>Ir al catálogo de productos</Link>
+          </Center>
+        </Container>
       ) : (
         <Container maxW="4xl" className="cartContainer">
           <Heading className="cartTitle">Mi Carrito</Heading>
@@ -36,16 +44,21 @@ const Cart = () => {
                   <h2>
                     <AccordionButton
                       _expanded={{ bg: "lightblue", color: "white" }}
+                      className="cartItem"
                     >
                       <Box as="span" flex="1" textAlign="left">
-                        <Badge className="cartQuantity">{prod.quantity}x</Badge>{" "}
+                        <Badge fontSize="1.1em" className="cartQuantity">
+                          {prod.quantity}
+                        </Badge>{" "}
                         {prod.item.name}
                       </Box>
                       <AccordionIcon />
                     </AccordionButton>
                   </h2>
                   <AccordionPanel className="itemExpanded">
-                    <Badge className="cartQuantity">{prod.quantity}x</Badge>{" "}
+                    <Badge fontSize="1.1em" className="cartQuantity">
+                      {prod.quantity}
+                    </Badge>{" "}
                     {prod.item.name} - Precio Unitario: ${prod.item.price} -
                     Subtotal: ${prod.item.price * prod.quantity}
                     <br />
@@ -64,12 +77,21 @@ const Cart = () => {
               ))}
             </Accordion>
           </Container>
-          <Box w="30%" p={2} className="cartTotal"><u>Total de su compra:</u> ${total}</Box>
-          <Divider className="cartDivider"/>
-          <Button colorScheme={"red"} onClick={resetCart}>
-            Vaciar Carrito
-          </Button>
-          <Button colorScheme={"green"} onClick={handleShowForm}>Finalizar Compra</Button>
+          <Box w="30%" p={2} className="cartTotal">
+            <u>Total de su compra:</u> ${total}
+          </Box>
+          <Divider className="cartDivider" />
+          <Center>
+          <Flex w="40%">
+            <Button colorScheme={"red"} onClick={resetCart}>
+              Vaciar Carrito
+            </Button>
+            <Spacer />
+            <Button colorScheme={"green"} onClick={handleShowForm}>
+              Finalizar Compra
+            </Button>
+          </Flex>
+          </Center>
         </Container>
       )}
       {showForm && <BuyerForm />}
