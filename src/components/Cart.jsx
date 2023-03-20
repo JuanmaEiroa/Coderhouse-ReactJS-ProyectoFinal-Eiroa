@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { CartContext } from "../context/ShoppingCartContext";
 import React, { useContext } from "react";
-import BuyerForm from "./BuyerForm";
+import OrderForm from "./OrderForm";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
@@ -94,7 +94,7 @@ const Cart = () => {
           </Center>
         </Container>
       )}
-      {showForm && <BuyerForm />}
+      {showForm && <OrderForm />}
     </>
   );
 };

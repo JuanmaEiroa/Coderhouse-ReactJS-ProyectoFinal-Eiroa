@@ -19,7 +19,7 @@ import { MdPermIdentity, MdPhone, MdOutlineHome } from "react-icons/md";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
 import { CartContext } from "../context/ShoppingCartContext";
 
-const BuyerForm = () => {
+const OrderForm = () => {
   const { cart, total } = useContext(CartContext);
 
   const [orderId, setOrderId] = useState("");
@@ -54,7 +54,7 @@ const BuyerForm = () => {
     userPhone,
     extra,
     cart,
-    total
+    total,
   };
   const ordersCollection = collection(db, "order");
 
@@ -62,7 +62,7 @@ const BuyerForm = () => {
 
   return (
     <>
-      <Container className="buyerForm">
+      <Container className="orderForm">
         <Center>
           <Heading size="md" className="formTitle">
             Complete el siguiente formulario con sus datos:
@@ -148,7 +148,7 @@ const BuyerForm = () => {
               Los campos con un * son obligatorios
             </FormHelperText>
           </FormControl>
-          <Button colorScheme={"green"} type="submit">
+          <Button colorScheme={"green"} type="submit" isDisabled={emailError}>
             Enviar Datos
           </Button>
         </form>
@@ -166,4 +166,4 @@ const BuyerForm = () => {
   );
 };
 
-export default BuyerForm;
+export default OrderForm;

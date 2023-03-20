@@ -2,7 +2,6 @@ import { createContext, useState } from "react";
 export const CartContext = createContext(null);
 
 import React from "react";
-import BuyerForm from "../components/BuyerForm";
 
 const ShoppingCartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
