@@ -283,4 +283,28 @@ h1 {
   font-size: 0.9em !important;
 }
 
+.formDivider {
+  margin-top: 2%;
+  border: dashed 2px black !important;
+
+}
+
+.orderNumber {
+  font-size: 1.1em;
+  padding-top: 2%;
+}
+
+.orderId {
+  background-color: black;
+  color: white;
+  margin-left: 4%;
+}
+
+.inputError {
+  margin-top: 0;
+  margin-bottom: 2%;
+}
+
+
+
 /*FIN CSS FORM*/

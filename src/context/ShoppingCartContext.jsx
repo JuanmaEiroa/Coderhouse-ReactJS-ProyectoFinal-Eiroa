@@ -73,16 +73,7 @@ const ShoppingCartContextProvider = ({ children }) => {
     setShowForm(true);
   }
 
-  const handleFinishBuy = () => {
-    Swal.fire({
-      title: "Muchas Gracias!",
-      text: "Su pedido ha sido realizado",
-      icon: "success",
-      confirmButtonText: "Ok",
-      color: "black",
-    });
-  }
-
+  
   return (
     <>
       <CartContext.Provider
@@ -97,7 +88,6 @@ const ShoppingCartContextProvider = ({ children }) => {
           handleRemoveItem,
           showForm,
           handleShowForm,
-          handleFinishBuy
         }}
       >
         {children}
