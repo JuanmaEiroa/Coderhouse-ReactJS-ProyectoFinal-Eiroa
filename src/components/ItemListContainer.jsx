@@ -9,38 +9,20 @@ const ItemListContainer = () => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
 
-  /* USO DE FIREBASE → FUNCIONA CORRECTAMENTE
   useEffect(() => {
     const db = getFirestore();
 
     const itemsCollection = collection(db, "ortopedicproducts");
 
     getDocs(itemsCollection).then((snapshot) => {
-      const docs = snapshot.docs.map((doc) => doc.data());
+      const docs = snapshot.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      });
       category
         ? setProducts(docs.filter((product) => product.category === category))
         : setProducts(docs);
     });
   }, [category]);
-  */
-
-  useEffect(() => {
-    async function getProducts() {
-      try {
-        const response = await fetch("/src/productList.json");
-        const productsList = await response.json();
-        category
-          ? setProducts(
-              productsList.filter((product) => product.category === category)
-            )
-          : setProducts(productsList);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getProducts();
-  }, [category]);
-
 
   return (
     <>
